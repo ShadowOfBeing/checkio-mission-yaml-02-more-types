@@ -1,0 +1,43 @@
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">yaml('name: Alex
+age: 12') == {'age': 12, 'name': 'Alex'}
+yaml('name: Alex Fox
+'
+ 'age: 12
+'
+ '
+'
+ 'class: 12b') == {'age': 12,
+ 'class': '12b',
+ 'name': 'Alex Fox'}
+</pre>
+{% else %}
+<pre class="brush: python">yaml('name: Alex
+age: 12') == {'age': 12, 'name': 'Alex'}
+yaml('name: Alex Fox
+'
+ 'age: 12
+'
+ '
+'
+ 'class: 12b') == {'age': 12,
+ 'class': '12b',
+ 'name': 'Alex Fox'}
+</pre>
+{% endif %}
+</div>
+
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Precondition:</strong>
+    <i>Используется стандарт YAML версии 1.2</i>
+</p>

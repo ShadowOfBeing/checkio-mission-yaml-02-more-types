@@ -1,0 +1,104 @@
+<!-- Describe task in general -->
+
+<p>Это вторая задача по парсингу YAML. И это следующий этап услажнения парсинга, в котором добавляются тип данных null и bool. А также возможность использовать кавычки в строках</p>
+
+<p>Вот несколько примеров</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+</pre>
+
+<pre>
+{
+  "name": "Bob Dylan", 
+  "children": 6
+}
+</pre>
+
+<p>Как видите, строку можно задавать в кавычках. Это могут быть как двойные, так и одинарные кавычки.</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+alive: false
+</pre>
+
+<pre>
+{
+  "name": "Bob Dylan", 
+  "alive": {% if interpreter.slug == "js-node" %}false{% else %}False{%endif%}, 
+  "children": 6
+}
+</pre>
+
+<p>true и false - это ключевые слова, определяющие булевный тип</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+coding:
+</pre>
+
+<pre>
+{
+  "coding": {% if interpreter.slug == "js-node" %}null{% else %}None{%endif%}, 
+  "name": "Bob Dylan", 
+  "children": 6
+}
+</pre>
+
+<p>Если значение не указано, то оно становится неопределенным. Также для этого есть ключевое слово null.</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Input: </strong> Строка в формате 
+</p>
+
+<p>
+    <strong>Output: </strong> Объект. 
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">yaml('name: Alex
+age: 12') == {'age': 12, 'name': 'Alex'}
+yaml('name: Alex Fox
+'
+ 'age: 12
+'
+ '
+'
+ 'class: 12b') == {'age': 12,
+ 'class': '12b',
+ 'name': 'Alex Fox'}
+</pre>
+{% else %}
+<pre class="brush: python">yaml('name: Alex
+age: 12') == {'age': 12, 'name': 'Alex'}
+yaml('name: Alex Fox
+'
+ 'age: 12
+'
+ '
+'
+ 'class: 12b') == {'age': 12,
+ 'class': '12b',
+ 'name': 'Alex Fox'}
+</pre>
+{% endif %}
+</div>
+
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Precondition:</strong>
+    <i>Используется стандарт YAML версии 1.2</i>
+</p>
