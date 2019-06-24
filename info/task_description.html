@@ -1,3 +1,64 @@
+<!-- Describe task in general -->
+
+<p>This is the second task on parsing YAML. It represents the next step where parsing gets more complicated. The data types, such as null and bool, are being added, and besides that, you’re getting the ability to use quotes in strings.</p>
+
+<p>Here are some of the examples:</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+</pre>
+
+<pre>
+{
+  "name": "Bob Dylan", 
+  "children": 6
+}
+</pre>
+
+<p>As you can see, the string can be put in quotes. It can be both double and single quotes.</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+alive: false
+</pre>
+
+<pre>
+{
+  "name": "Bob Dylan", 
+  "alive": {% if interpreter.slug == "js-node" %}false{% else %}False{%endif%}, 
+  "children": 6
+}
+</pre>
+
+<p>true and false are the keywords defining the boolean type.</p>
+
+<pre>
+name: "Bob Dylan"
+children: 6
+coding:
+</pre>
+
+<pre>
+{
+  "coding": {% if interpreter.slug == "js-node" %}null{% else %}None{%endif%}, 
+  "name": "Bob Dylan", 
+  "children": 6
+}
+</pre>
+
+<p>If no value is specified, it becomes undefined. There also is a keyword for this - null.</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Input: </strong> A format string.
+</p>
+
+<p>
+    <strong>Output: </strong> An object. 
+</p>
+
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
@@ -39,5 +100,5 @@ yaml('name: Alex Fox
 <!-- The section is optional -->
 <p>
     <strong>Precondition:</strong>
-    <i>Используется стандарт YAML версии 1.2</i>
+    <i>YAML 1.2 is being used.</i>
 </p>
