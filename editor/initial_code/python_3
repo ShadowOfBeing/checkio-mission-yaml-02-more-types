@@ -21,12 +21,12 @@ if __name__ == '__main__':
      'class: 12b') == {'age': 12,
      'class': '12b',
      'name': 'Alex Fox'}
-    assert yaml('name: "Alex \\"Fox\\"\n'
+    assert yaml('name: "Alex \\"Fox\\""\n'
      'age: 12\n'
      '\n'
      'class: 12b') == {'age': 12,
      'class': '12b',
-     'name': 'Alex Fox'}
+     'name': 'Alex "Fox"'}
     assert yaml('name: "Bob Dylan"\n'
      'children: 6\n'
      'alive: false') == {'alive': False,

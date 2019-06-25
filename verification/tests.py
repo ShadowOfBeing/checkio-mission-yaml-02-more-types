@@ -41,13 +41,13 @@ class: 12b"""],
             }
         },
         {
-            "input": ["""name: "Alex \\"Fox\\"
+            "input": ["""name: "Alex \\"Fox\\""
 age: 12
 
 class: 12b"""],
             "answer": {
               "age": 12, 
-              "name": "Alex Fox", 
+              "name": "Alex \"Fox\"", 
               "class": "12b"
             }
         },
