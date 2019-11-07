@@ -17,8 +17,8 @@ if (!global.is_checking) {
      + 'age: 12\n'
      + '\n'
      + 'class: 12b'), {'age': 12,
-     + 'class': '12b',
-     + 'name': 'Alex Fox'});
+     'class': '12b',
+     'name': 'Alex Fox'});
     assert.deepEqual(yaml('name: "Alex Fox"\n'
      + 'age: 12\n'
      + '\n'
@@ -44,13 +44,13 @@ if (!global.is_checking) {
     assert.deepEqual(yaml('name: "Bob Dylan"\n'
      + 'children: 6\n'
      + 'coding: null'), {'children': 6,
-     + 'coding': Null,
-     + 'name': 'Bob Dylan'});
+     'coding': Null,
+     'name': 'Bob Dylan'});
     assert.deepEqual(yaml('name: "Bob Dylan"\n'
      + 'children: 6\n'
      + 'coding: "null" '), {'children': 6,
-     + 'coding': 'null',
-     + 'name': 'Bob Dylan'});
+     'coding': 'null',
+     'name': 'Bob Dylan'});
 
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
